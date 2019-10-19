@@ -1525,10 +1525,7 @@ const windowIsDefined = (typeof window === "object");
 							this.tooltip_max.style.top = '';
 							this.tooltip_max.style.bottom = 22 + 'px';
 						} else {
-							this._removeClass(this.tooltip_max, 'top');
-							this._addClass(this.tooltip_max, 'bottom');
-							this.tooltip_max.style.top = this.tooltip_min.style.top;
-							this.tooltip_max.style.bottom = '';
+							myFuncTop();
 						}
 					} else {
 						if (offset_min.right > offset_max.left) {
@@ -1543,6 +1540,13 @@ const windowIsDefined = (typeof window === "object");
 					}
 				}
 			},
+			
+			function myFuncTop(){
+			this._removeClass(this.tooltip_max, 'top');
+							this._addClass(this.tooltip_max, 'bottom');
+							this.tooltip_max.style.top = this.tooltip_min.style.top;
+							this.tooltip_max.style.bottom = '';
+		};
 			_createHighlightRange: function (start, end) {
 				if (this._isHighlightRange(start, end)) {
 					if (start > end) {
